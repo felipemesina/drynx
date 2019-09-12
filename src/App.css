@@ -1,0 +1,116 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(140, 236, 255, 0.5),
+      rgba(223, 104, 252, 0.5)
+    ),
+    url("./images/cheers.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* === SearchBar Component ===*/
+
+.form-inline {
+  justify-content: center;
+}
+
+.form-control {
+  border-right: 0;
+}
+
+.input-group-lg {
+  width: 50% !important;
+}
+
+#searchButton {
+  border-left: 0px;
+  border-color: #ced4da;
+  background-color: white;
+}
+
+/* === Category Component ===*/
+
+.categoryWrapper {
+  background-color: #fff;
+  padding-top: 1em;
+  margin-top: 1rem;
+}
+
+.divider {
+  position: relative;
+  font-family: "Arial", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  text-align: center;
+  padding: 0;
+  display: block;
+  margin: 10px auto 0px auto;
+  line-height: 2em;
+  width: 95%;
+}
+
+.divider:before {
+  content: "";
+  background: #000;
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 15%;
+}
+
+.divider span {
+  padding: 0px 10px;
+  background: #fff;
+  position: relative;
+  font-weight: initial;
+}
+
+/* === RandomCocktail Component ===*/
+.newDrinkWrapper {
+  margin-top: 2em;
+}
+
+.getRecipeWrapper {
+  text-align: right;
+}
+
+h1 {
+  margin-top: 2.5em;
+  padding-bottom: 0.4em;
+  color: #fff;
+  font-family: "Yanone Kaffeesatz";
+}
+
+h2 {
+  width: 100%;
+  font-size: 4em;
+  font-family: Old Standard TT;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+}
+
+.btn {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: 900;
+}
+
+.img-fluid {
+  max-width: 67%;
+  height: auto;
+  border-radius: 50%;
+  border: 6px solid #fff;
+}
+
+/* === RECIPE INFO */
+.recipeWrapper {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.recipeContainer {
+  padding-top: 4%;
+}
