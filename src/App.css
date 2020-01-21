@@ -87,7 +87,7 @@ h1 {
 h2 {
   width: 100%;
   font-size: 4em;
-  font-family: Old Standard TT;
+  font-family: "Old Standard TT";
   font-weight: 900;
   text-align: center;
   color: #fff;
@@ -99,10 +99,10 @@ h2 {
 }
 
 .img-fluid {
-  max-width: 67%;
+  max-width: 60%;
   height: auto;
   border-radius: 50%;
-  border: 6px solid #fff;
+  border: 4px solid #fff;
 }
 
 /* === RECIPE INFO */
@@ -113,4 +113,40 @@ h2 {
 
 .recipeContainer {
   padding-top: 4%;
+}
+
+.ingredientsWrapper {
+  padding: 0;
+}
+
+.measurementText {
+  text-align: right;
+}
+
+.ingreText {
+  padding-left: 0.5em;
+}
+
+.drinkName {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2.7em;
+  font-weight: 900;
+}
+
+.ingrHeadline {
+  font-weight: 900;
+  font-family: "Times New Roman";
+  text-align: center;
+}
+
+.imgWrapper {
+  justify-content: center;
+}
+
+.drinkImg {
+  width: 45%;
+}
+
+.instructions {
+  justify-content: center;
 }

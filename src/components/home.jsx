@@ -31,11 +31,6 @@ class Home extends Component {
     const { drinkName, drinkImg, drinkId } = this.state;
     return (
       <div className="container-fluid my-0 mx-0 py-0 px-0">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            Drynx
-          </a>
-        </nav>
         <RandomCocktail
           drinkName={drinkName}
           drinkImg={drinkImg}

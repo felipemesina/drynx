@@ -10,7 +10,8 @@ class RecipeInfo extends RandomCocktail {
     drinkName: [],
     drinkImg: [],
     drinkIngredients: [],
-    measurements: []
+    measurements: [],
+    instructions: []
   };
 
   getIngredients() {
@@ -26,7 +27,6 @@ class RecipeInfo extends RandomCocktail {
       }
     });
     this.setState({ drinkIngredients });
-    console.log(drinkIngredients, drinks);
   }
 
   getMeasurements() {
@@ -42,7 +42,6 @@ class RecipeInfo extends RandomCocktail {
       }
     });
     this.setState({ measurements });
-    console.log(measurements);
   }
 
   async componentDidMount() {
@@ -57,9 +56,11 @@ class RecipeInfo extends RandomCocktail {
     );
     let drinkName = drinks.drinks[0].strDrink;
     let drinkImg = drinks.drinks[0].strDrinkThumb;
-    this.setState({ drinks, drinkName, drinkImg });
+    let instructions = drinks.drinks[0].strInstructions;
+    this.setState({ drinks, drinkName, drinkImg, instructions });
     this.getIngredients();
     this.getMeasurements();
+    console.log(drinks.drinks[0].strInstructions);
   }
 
   createKeyNumbers() {
@@ -68,28 +69,39 @@ class RecipeInfo extends RandomCocktail {
   }
 
   render() {
-    const { drinkName, drinkImg, drinkIngredients, measurements } = this.state;
+    const {
+      drinkName,
+      drinkImg,
+      drinkIngredients,
+      measurements,
+      instructions
+    } = this.state;
     return (
       <main className="container-fluid recipeWrapper">
         <div className="container recipeContainer">
+          <div className="row imgWrapper">
+            <img src={drinkImg} className="drinkImg" alt="" />
+          </div>
           <div className="row">
+            <div className="col-sm-6">{instructions}</div>
             <div className="col-sm-6">
-              <img src={drinkImg} className="img-fluid" alt="" />
-            </div>
-            <div className="col-sm-6">
-              <h3>{drinkName}</h3>
-              <ul className="list-group">
-                {measurements.map(item => (
-                  <li className="list-group-item" key={this.createKeyNumbers()}>
-                    {item}
-                  </li>
-                ))}
-                {drinkIngredients.map(item => (
-                  <li className="list-group-item" key={this.createKeyNumbers()}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <span className="drinkName">{drinkName}</span>
+              <div className="container">
+                <h3 className="ingrHeadline divider">Ingredients</h3>
+
+                <div className="row">
+                  <div className="col-sm-6 ingredientsWrapper measurementText">
+                    {measurements.map(measurement => (
+                      <p key={this.createKeyNumbers()}>{measurement}</p>
+                    ))}
+                  </div>
+                  <div className="col-sm-6 ingredientsWrapper ingreText">
+                    {drinkIngredients.map(ingredient => (
+                      <p key={this.createKeyNumbers()}>{ingredient}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
